@@ -1,0 +1,19 @@
+/*62.5% é equivalente a 10px*/
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.background-fixed {
+  background: url("../../imgs/background.png") no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.wrapper {
+  position: relative;
+  z-index: 2;
+}
