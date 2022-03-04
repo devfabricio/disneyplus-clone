@@ -6,7 +6,7 @@
   background: url("../../imgs/logo.svg") no-repeat;
   display: inline-block;
   background-position: center;
-  background-size: cover;
+  background-size: 105%;
   width: 7.5rem;
   height: 4rem;
 }
@@ -17,7 +17,7 @@
     padding-top: 2rem;
   }
   .logo__link {
-    width: 3.2rem;
-    height: 5.9rem;
+    height: 3.2rem;
+    width: 5.9rem;
   }
 }
