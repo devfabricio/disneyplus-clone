@@ -5,6 +5,7 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     color: white;
+    font-size: 2rem;
 }
 
 .background-fixed {
