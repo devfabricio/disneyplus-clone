@@ -1,5 +1,8 @@
 .header {
   display: flex;
+  position: fixed;
+  width: 100%;
+  transition: background-color 0.3s;
 }
 .header__navigation {
   width: 100%;

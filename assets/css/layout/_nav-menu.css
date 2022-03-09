@@ -50,12 +50,15 @@
   border-radius: 0.5rem;
   display: none;
   padding: 0.4rem 0;
-  position: relative;
-  top: -2rem;
+  position: absolute;
+  margin: -2rem;
 }
 .nav-submenu__text {
   margin-left: 1.2rem;
   position: relative;
+}
+.nav-submenu.active {
+  display: block;
 }
 
 @media screen and (max-width: 1024px) {
