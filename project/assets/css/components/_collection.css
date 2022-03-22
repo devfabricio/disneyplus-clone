@@ -23,8 +23,13 @@
 }
 
 .movie-carousel__item {
+    opacity: .5;
     padding: 0 1rem 2.5rem;
     width: calc(91vw / 5);
+}
+
+.movie-carousel__item.active {
+    opacity: 1;
 }
 
 .movie-carousel__link {
@@ -56,17 +61,26 @@
 }
 
 .movie-carousel .arrow-slider {
+    height: 100%;
     margin-top: -2.5rem;
+    opacity: 0;
     position: absolute;
+    transition: opacity .3s;
     z-index: 2;
 }
 
+.movie-carousel .arrow-slider:hover {
+    opacity: 1;
+}
+
 .movie-carousel .arrow-slider--left {
-    left: 3.6rem;
+    padding: 0 3.6rem ;
+    left: 0;
 }
 
 .movie-carousel .arrow-slider--right {
-    right: 3.6rem;
+    padding: 0 3.6rem ;
+    right: 0;
 }
 
 @media screen and (max-width: 1024px) {
@@ -81,9 +95,11 @@
         width: calc(85vw / 2);
     }
     .movie-carousel .arrow-slider--left {
-        left: 1rem;
+        padding: 0 1rem ;
+        right: 0;
     }
     .movie-carousel .arrow-slider--right {
-        right: 1rem;
+        padding: 0 1rem ;
+        right: 0;
     }
 }
