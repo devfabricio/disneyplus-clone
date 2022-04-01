@@ -96,7 +96,7 @@
     }
     .movie-carousel .arrow-slider--left {
         padding: 0 1rem ;
-        right: 0;
+        left: 0;
     }
     .movie-carousel .arrow-slider--right {
         padding: 0 1rem ;
