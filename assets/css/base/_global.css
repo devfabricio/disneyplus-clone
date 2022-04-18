@@ -5,7 +5,6 @@ html{
 body {
     font-family: 'roboto', sans-serif;
     color: white;
-    font-size: 2rem;
 }
 .background-fixed{
     background: url(../../imgs/background.png) no-repeat;
