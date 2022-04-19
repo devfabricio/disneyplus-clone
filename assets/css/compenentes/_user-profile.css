@@ -1,0 +1,22 @@
+.user-profile{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+}
+.user-profile--reverse {
+    flex-direction: row-reverse;
+}
+.user-profile--reverse .user-profile__title {
+    margin-left: 0;
+    margin-right: 1.6rem;
+
+}
+.user-profile__avatar {
+    width: 4.8rem;
+    height: 4.8rem;
+}
+.user-profile__title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-left: 1.6rem;
+}

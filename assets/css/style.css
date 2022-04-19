@@ -4,4 +4,6 @@
 @import url(base/animations.css);
 @import url(layout/_header.css);
 @import url(layout/_nav-menu.css);
+@import url(layout/_user-menu.css);
+@import url(compenentes/_user-profile.css);
 @import url(compenentes/_logo.css);
