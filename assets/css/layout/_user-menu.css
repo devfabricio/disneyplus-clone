@@ -70,7 +70,7 @@
 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1125px) {
 
     .user-menu__current-profile{
         padding-top: 1.9rem;

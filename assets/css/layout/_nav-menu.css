@@ -74,7 +74,7 @@
     position: relative;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1125px) {
     .nav-menu{
         margin-left: 2.5rem;
         padding-bottom: 1rem;
