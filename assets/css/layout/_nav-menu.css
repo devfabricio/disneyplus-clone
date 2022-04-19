@@ -61,9 +61,13 @@
     background: #1414;
     border: .1rem solid #393939;
     display: none;
+    margin: -2rem;
     padding: 0.4rem 0;
-    position: relative;
-    top: -2rem;
+    position: absolute;
+    
+}
+.nav-submenu.active{
+    display: block;
 }
 .nav-submenu__text{
     margin-left: 1.2rem;
