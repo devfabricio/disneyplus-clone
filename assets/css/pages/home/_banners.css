@@ -15,14 +15,6 @@
     width: 90vw;
 }
 
-.banner-slider__counter {
-    font-size: 2rem;
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-    z-index: 4;
-}
-
 .banner-slider__link{
     display: block;
     position: relative;
@@ -49,11 +41,18 @@
     width: 100%;
 }
 .banner-slider__title{
+    animation: slideLeft 1s ;
     left: 0;
+    display: none;
     top: 0;
     width: 100%;
     position: absolute;
 }
+
+.banner-slider__title.active {
+    display: block;
+}
+
 .banners .arrow-slider {
     margin-top: -3rem;
     position: absolute;
@@ -71,4 +70,28 @@
 .banners .controls-slider {
     bottom: 4.6rem;
     right: 12.6rem;
+}
+@media screen and (max-width: 1125px) {
+
+    .banners {   
+        padding-top: 8.2rem;
+    }
+
+    .banner-slider__item {
+        width: 85vw;
+    }
+
+    .banners .arrow-slider__left{
+        left: 1rem;
+    
+    }
+    .banners .arrow-slider__right{
+        right: 1rem;
+    
+    }
+    .banners .controls-slider{
+        bottom: 4.2rem ;
+        right: 50%;
+        transform: translateX(50%);
+    }
 }

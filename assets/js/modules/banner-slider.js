@@ -1,5 +1,9 @@
 const sliderItems = document.querySelectorAll('[data-banner=item')
 const slider = document.querySelector('[data-banner="slider"]')
+const btnNext = document.querySelector('[data-banner="btn-next"]')
+const btnPrevious = document.querySelector('[data-banner="btn-previous"]')
+const btnControls = document.querySelectorAll('[data-banner="btn-control"]')
+const imgTitles = document.querySelectorAll('[data-banner="img-title"]')
 
 const state = {
     MouseDownPosition: 0,
@@ -47,14 +51,37 @@ function animateTransition(active){
     }
 }
 
+function activeControlBtn(index){
+    btnControls.forEach((item)=>{
+        item.classList.remove('active')
+    })
+    const btnControl = btnControls[index]
+    btnControl.classList.add('active')
+}
+
+function activeImageTitle(index){
+    imgTitles.forEach((item)=>{
+        item.classList.remove('active')
+    })
+    const imgTitle = imgTitles[index]
+    imgTitle.classList.add('active')
+}
+
 function setVisibleSlide (index) {
-    animateTransition(true)
+    state.currentSlideIndex = index
     const position = getCenterPosition (index)
+    activeControlBtn(index)
+    activeImageTitle(index)
+    animateTransition(true)
     translateSlide(position)
 }
 
 function preventDefault(event){
     event.preventDefault()
+}
+
+function onControlButtonClick(event, index){
+    setVisibleSlide(index)
 }
 
 function onMouseDown (event, index) {
@@ -74,13 +101,14 @@ function onMouseMove (event) {
 
 function onMouseUp (event) {
     const slide = event.currentTarget
-    if(state.movementPosition > 150) {
+    const movementQtd = event.type.includes('touch') ? 50 : 150
+    if(state.movementPosition > movementQtd) {
         backwardSlide()
-    } else if (state.movementPosition < -150) {
+    } else if (state.movementPosition < -movementQtd
+        ) {
         forwardSlide()
     } else {
-        const calc = getCenterPosition (state.currentSlideIndex)
-        translateSlide(calc)
+        setVisibleSlide(state.currentSlideIndex)
     }
     slide.removeEventListener('mousemove', onMouseMove)
 }
@@ -90,18 +118,55 @@ function onMouseLeave (event) {
     slide.removeEventListener('mousemove', onMouseMove)
 }
 
-function setListerners () {
-    sliderItems.forEach((slide, index) => {
-    const link = slide.querySelector('.banner-slider__link')
-    link.addEventListener('click', preventDefault)
-    slide.addEventListener('dragstart', preventDefault)
-    slide.addEventListener('mousedown', (event) => {
-        onMouseDown(event, index)
-    })
-    slide.addEventListener('mouseup', onMouseUp)
-    slide.addEventListener('mouseleave', onMouseLeave)
-    })
+function onTouchStart(event, index){
+    let slide = event.currentTarget
+    slide.addEventListener('touchmove', onTouchMove)
+    event.clientX = event.touches[0].clientX
+    onMouseDown(event, index)
+}
 
+function onTouchMove(event){
+    event.clientX = event.touches[0].clientX
+    onMouseMove(event)
+}
+
+function onTouchEnd(event){
+    let slide = event.currentTarget
+    slide.removeEventListener('touchmove', onTouchMove)
+    onMouseUp(event)
+}
+
+function onResizeWindow(){
+    setVisibleSlide(state.currentSlideIndex)
+}
+
+function setListerners () {
+    btnNext.addEventListener('click', forwardSlide)
+    btnPrevious.addEventListener('click', backwardSlide)
+    sliderItems.forEach((slide, index) => {
+        const link = slide.querySelector('.banner-slider__link')
+        link.addEventListener('click', preventDefault)
+        slide.addEventListener('dragstart', preventDefault)
+        slide.addEventListener('mousedown', (event) => {
+            onMouseDown(event, index)
+        })
+        slide.addEventListener('mouseup', onMouseUp)
+        slide.addEventListener('mouseleave', onMouseLeave)
+        btnControls[index].addEventListener('click', function(event){
+            onControlButtonClick(event, index) 
+        })
+        slide.addEventListener('touchstart', (event) => {
+            onTouchStart(event, index)
+        } )
+        slide.addEventListener('touchend', onTouchEnd )
+    })
+    let resizeTimeOut;
+    window.addEventListener('resize',(event) => {
+        clearTimeout(resizeTimeOut)
+        resizeTimeOut = setTimeout(() =>{
+            onResizeWindow()
+        }, 1000)
+    })
 }
 
 function init(){
