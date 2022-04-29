@@ -2,6 +2,7 @@
     align-items: center;
     display: flex;
     padding-top: 9.7rem;
+    position: relative;
     overflow: hidden;
 }
 .banner-slider{
@@ -12,7 +13,7 @@
     padding: 0 1rem 3rem;
     flex-shrink: 0;
     position: relative;
-    width: 90vw;
+    width: 91vw;
 }
 
 .banner-slider__link{
