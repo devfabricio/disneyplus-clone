@@ -1,0 +1,15 @@
+@import url('./base/_reset.css');
+@import url('./base/_fonts.css');
+@import url('./base/_global.css');
+@import url('./base/_animations.css');
+@import url('./layout/_header.css');
+@import url('./layout/_nav-menu.css');
+@import url('./layout/_user-menu.css');
+@import url('./layout/_footer.css');
+@import url('./components/_logo.css');
+@import url('./components/_user-profile.css');
+@import url('./components/_arrow-slider.css');
+@import url('./components/_controls-slider.css');
+@import url('./components/_collection.css');
+@import url('./pages/home/_banners.css');
+@import url('./pages/home/_categories.css');

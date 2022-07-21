@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    position: fixed;
+    transition: background-color .3s;
+    z-index: 10;
+    width: 100%;
+}
+
+.header__navigation {
+    width: 100%;
+}
+
+.header .logo {
+    margin-left: 3.8rem;
+    padding-top: 1.6rem;
+}
+
+@media screen and (max-width: 1024px){
+    .header .logo {
+        margin-left: 2.2rem;
+        padding-top: 2.0rem;
+    }
+}
