@@ -70,3 +70,21 @@
     right: 3.6rem;
 
 }
+@media screen and (max-width: 1125px){
+    .movie-carousel__item{
+        width: calc(85vw / 2);
+    }
+    .collection-title{
+        width: 85vw;
+    }
+    .movie-carousel .arrow-slider__right{
+        right: 1rem;
+    
+    }
+    
+    .movie-carousel .arrow-slider__left{
+        left: 1rem;
+    
+    }
+
+}
