@@ -1,0 +1,14 @@
+@import url(base/_reset.css);
+@import url(base/_fonts.css);
+@import url(base/_global.css);
+@import url(base/animations.css);
+@import url(layout/_header.css);
+@import url(layout/_nav-menu.css);
+@import url(layout/_user-menu.css);
+@import url(compenentes/_arrow-slider.css);
+@import url(compenentes/collections.css);
+@import url(compenentes/_user-profile.css);
+@import url(compenentes/_logo.css);
+@import url(compenentes/_controls-slider.css);
+@import url(pages/home/_banners.css);
+@import url(pages/home/categories.css);
