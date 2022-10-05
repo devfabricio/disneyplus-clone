@@ -1,6 +1,5 @@
 @import url('./base/_reset.css');
 @import url('./base/solid.css');
 @import url('./base/all.css');
-body {
-   background-color: red;
-}
+@import url('./base/_global.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');

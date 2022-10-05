@@ -1,0 +1,21 @@
+html {
+    /* REM 
+        1 rem = 16px
+    */ 
+        font-size: 62.5%;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.background-fixed {
+    width: 100%;
+    height: 100vh;
+    background: url('../../imgs/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+
+}
+.wrapper {
+    position: relative;
+}
