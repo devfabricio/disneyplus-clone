@@ -1,4 +1,6 @@
 @import url('./base/_reset.css');
+@import url('./base/solid.css');
+@import url('./base/all.css');
 body {
-   
+   background-color: red;
 }
