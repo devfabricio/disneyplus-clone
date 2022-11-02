@@ -1,0 +1,7 @@
+header{
+    display: flex;
+}
+
+.header__navigation{
+    width: 100%;
+}
