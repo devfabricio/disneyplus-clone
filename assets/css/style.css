@@ -4,3 +4,6 @@
 @import url('/assets/css/components/_logo.css');
 @import url('/assets/css/layout/_header.css');
 @import url('/assets/css/layout/nav-menu.css');
+@import url('/assets/css/layout/_user-menu.css');
+@import url('/assets/css/components/_user-profile.css');
+@import url('/assets/css/base/_animations.css');
