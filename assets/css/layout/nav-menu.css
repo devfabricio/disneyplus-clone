@@ -33,9 +33,14 @@
     border-radius: .5rem;
     display: none;
     padding: .4rem 0;
-    position: relative;
-    top: -2rem;
+    position: absolute;
+    margin: -2rem;
 }
+
+.nav-submenu.active {
+    display: block;
+}
+
 
 .nav-menu__text {
     margin-left: 1.1rem;
@@ -66,6 +71,7 @@
     margin-left: 1.2rem;
     position: relative;
 }
+
 
 .nav-menu__link:hover .nav-menu__text::before,
 .nav-submenu__link:hover .nav-submenu__text::before {

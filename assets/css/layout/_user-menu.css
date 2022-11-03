@@ -63,10 +63,16 @@
     display: none;
 }
 
+.user-menu.active .show-hover,
 .user-menu:hover .show-hover,
 .user-menu:hover .user-profile__title {
     display: block;
 
+}
+
+.user-menu.active .show-hover,
+.user-menu.active .user-profile__title{
+    display: block;
 }
 
 @media screen and (max-width: 1024px){
