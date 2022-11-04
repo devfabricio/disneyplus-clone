@@ -4,8 +4,6 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-
-    background-attachment: fixed;
     color: white;
     
 }
@@ -21,4 +19,5 @@ body {
 
 .wrapper{
     position: relative;
+    z-index: 2;
 }

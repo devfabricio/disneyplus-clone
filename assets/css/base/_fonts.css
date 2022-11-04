@@ -6,7 +6,7 @@
 }
 
 @font-face {
-  font-family: 'FontAwesome 6 Free';
+  font-family: 'Font Awesome 6 Free';
   font-style: normal;
   font-weight: 900;
   font-display: block;
@@ -15,7 +15,7 @@
 
 .fas,
 .fa-solid {
-  font-family: 'FontAwesome 6 Free';
+  font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   font-style: normal;
 }

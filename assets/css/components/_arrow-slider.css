@@ -1,0 +1,18 @@
+.arrow-slider{
+    background: none;
+    color: white;
+    font-family: 'Font Awesome 6 Free';
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.banners .arrow-slider--left::before{
+    content: '\f053';
+    
+}
+
+.banners .arrow-slider--right::before{
+    content: '\f054';
+   
+}
+

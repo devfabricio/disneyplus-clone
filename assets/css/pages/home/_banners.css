@@ -1,17 +1,27 @@
 .banners{
+    align-items: center;
+    display: flex;
     padding-top: 9.7rem;
+    overflow: hidden;
+}
+.banner-slider{
+    display: flex;
+    position: relative;
 }
 
-.banner-slide__item{
-    margin: 0 auto;
+.banner-slider__item{
+    margin: 0 1rem;
+    flex-shrink: 0;
     width: 90vw;
+    padding-bottom: 3rem;
 }
-.banner-slide__link{
+
+.banner-slider__link{
     display: block;
     position: relative;
 }
 
-.banner-slide__link::before{
+.banner-slider__link::before{
     border: .4rem solid rgba(255,255,255,0);
     content: "";
     border-radius: .5rem;
@@ -20,21 +30,38 @@
     transition: border .3s;
 }
 
-.banner-slide__link:hover::before{
+.banner-slider__link:hover::before{
     border-color: rgba(255,255,255,0.7);
-    
-
 }
 
-.banner-slide__cover{
+.banner-slider__cover{
+    box-shadow: #000 0rem 3rem 3rem -2rem;
     display: block;
     border-radius: .5rem;
     width: 100%;
 }
 
-.banner-slide__title{
+.banner-slider__title{
     top: 0;
     left: 0;
     width: 100%;
     position: absolute;
+}
+
+
+.banners .arrow-slider--left{
+    position: absolute;
+    left: 3.6rem;
+    z-index: 3;
+}
+
+.banners .arrow-slider--right{
+    position: absolute;
+    right: 3.6rem;;
+    z-index: 3;
+}
+
+.banners .controls-slider{
+    right: 11.6rem;
+    bottom: 4.6rem;
 }
