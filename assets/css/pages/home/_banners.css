@@ -1,0 +1,40 @@
+.banners{
+    padding-top: 9.7rem;
+}
+
+.banner-slide__item{
+    margin: 0 auto;
+    width: 90vw;
+}
+.banner-slide__link{
+    display: block;
+    position: relative;
+}
+
+.banner-slide__link::before{
+    border: .4rem solid rgba(255,255,255,0);
+    content: "";
+    border-radius: .5rem;
+    position: absolute;
+    inset: 0;
+    transition: border .3s;
+}
+
+.banner-slide__link:hover::before{
+    border-color: rgba(255,255,255,0.7);
+    
+
+}
+
+.banner-slide__cover{
+    display: block;
+    border-radius: .5rem;
+    width: 100%;
+}
+
+.banner-slide__title{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+}
