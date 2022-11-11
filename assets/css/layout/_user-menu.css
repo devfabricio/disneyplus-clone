@@ -1,0 +1,66 @@
+.user-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.user-menu__background {
+  animation: slideDown 0.4s;
+  background-color: #141414;
+  border: 0.1rem solid #393939;
+  border-radius: 0.5rem;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.user-menu__current-profile {
+  padding: 1.2rem 2rem;
+}
+
+.user-menu__profiles .user-menu__item {
+  padding: 1rem 0;
+}
+
+.user-menu__options .user-menu__link {
+  color: #c3c3c3;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 1.3rem 2rem;
+}
+
+.user-menu__profiles {
+  border-top: 0.1rem solid #393939;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding-top: 0.9rem;
+}
+
+.user-menu__options {
+  padding-bottom: 2.2rem;
+}
+
+.user-menu__link:hover {
+  color: #fff;
+}
+
+.user-menu__current-profile,
+.user-menu__profiles,
+.user-menu__options {
+  position: relative;
+  z-index: 2;
+}
+
+.user-menu__profiles,
+.user-menu__options {
+  animation: showFade 0.6s;
+}
+
+.user-menu .show-hover {
+  display: none;
+}
+
+.user-menu:hover .show-hover {
+  display: block;
+}
