@@ -1,0 +1,15 @@
+.arrow-slider {
+  color: white;
+  background: none;
+  cursor: pointer;
+  font-family: "Font Awesome 6 free";
+  font-size: 3rem;
+}
+
+.arrow-slider--left::before {
+  content: "\f053";
+}
+
+.arrow-slider--right::before {
+  content: "\f054";
+}
