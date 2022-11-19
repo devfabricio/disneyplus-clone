@@ -8,6 +8,7 @@
 .controls-slider__item {
   background: none;
   color: #8c93a1;
+  cursor: pointer;
   margin: 0 0.5rem;
 }
 
