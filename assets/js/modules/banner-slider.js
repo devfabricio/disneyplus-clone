@@ -143,7 +143,6 @@ function onTouchEnd(event) {
     const slide = event.currentTarget;
     slide.removeEventListener('touchmove', onTouchMove)
     onMouseUp(event)
-
 }
 
 function setListeners() {
