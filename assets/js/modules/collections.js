@@ -38,31 +38,49 @@ const animateTransition = (active) => {
     }
 }
 
+const activeCurrentItems = () => {
+    const { carouselItems, state } = collectionData[currentCollectionIndex]
+    carouselItems.forEach((item, itemIndex) => {
+        item.classList.remove('active')
+        const firstItemIndex = state.currentSlideIndex * itemsPerSlide
+        if (itemIndex >= firstItemIndex && itemIndex < firstItemIndex + itemsPerSlide) {
+            item.classList.add('active')
+        }
+    })
+}
+
+const setArrowButtonsDisplay = () => {
+    const { btnPrevious, btnNext, state } = collectionData[currentCollectionIndex]
+    btnPrevious.style.display = state.currentSlideIndex === 0 ? 'none' : 'block'
+    btnNext.style.display = state.currentSlideIndex === getLastSlideIndex() ? 'none' : 'block'
+}
 
 const setVisibleSlide = (slideIndex) => {
     const { state } = collectionData[currentCollectionIndex]
-    state.currenteSlideIndex = slideIndex
+    state.currentSlideIndex = slideIndex
     const centerPosition = getCenterPosition(slideIndex)
+    activeCurrentItems()
+    setArrowButtonsDisplay()
     animateTransition(true)
     translateSlide(centerPosition)
 }
 
 const backwardSlide = () => {
     const { state } = collectionData[currentCollectionIndex]
-    if (state.currenteSlideIndex > 0) {
-        setVisibleSlide(state.currenteSlideIndex - 1)
+    if (state.currentSlideIndex > 0) {
+        setVisibleSlide(state.currentSlideIndex - 1)
     } else {
-        setVisibleSlide(state.currenteSlideIndex)
+        setVisibleSlide(state.currentSlideIndex)
     }
 }
 
 const forwardSlide = () => {
     const { state } = collectionData[currentCollectionIndex]
     const lastSlideIndex = getLastSlideIndex
-    if (state.currenteSlideIndex < lastSlideIndex) {
-        setVisibleSlide(state.currenteSlideIndex + 1)
+    if (state.currentSlideIndex < lastSlideIndex) {
+        setVisibleSlide(state.currentSlideIndex + 1)
     } else {
-        setVisibleSlide(state.currenteSlideIndex)
+        setVisibleSlide(state.currentSlideIndex)
     }
 }
 
@@ -90,7 +108,7 @@ const onMouseUp = (event) => {
     } else if (state.movement < -150) {
         forwardSlide()
     } else {
-        setVisibleSlide(state.currenteSlideIndex)
+        setVisibleSlide(state.currentSlideIndex)
     }
     state.movement = 0
     const item = event.currentTarget
@@ -132,7 +150,7 @@ const insertCollectionData = (collection) => {
             lastTranslatePosition: 0,
             currentSlidePosition: 0,
             currentItemIndex: 0,
-            currenteSlideIndex: 0,
+            currentSlideIndex: 0,
         }
     })
 }
@@ -183,7 +201,6 @@ const setListeners = (collectionIndex) => {
             currentCollectionIndex = collectionIndex
             onTouchStart(event, itemIndex)
         })
-
         item.addEventListener('touchend', onTouchEnd)
     })
 }
@@ -201,4 +218,5 @@ const init = () => {
 
 export default {
     init
+
 }

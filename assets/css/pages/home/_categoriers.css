@@ -37,6 +37,7 @@
 
 .category-menu__video {
   border-radius: 1rem;
+  display: none;
   position: absolute;
   top: 0.3rem;
   width: 99.9%;
