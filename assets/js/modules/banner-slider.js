@@ -1,210 +1,214 @@
-const sliderItems = document.querySelectorAll('[data-banner="item"]');
-const slider = document.querySelector('[data-banner="slider"]')
-const btnNext = document.querySelector('[data-banner="btn-next"]')
-const btnPrevious = document.querySelector('[data-banner="btn-previous"]')
-const btnControls = document.querySelectorAll('[data-banner="btn-control"]')
-const imgTitles = document.querySelectorAll('[data-banner="img-title"]')
+const bannerSliderModule = () => {
+    const sliderItems = document.querySelectorAll('[data-banner="item"]');
+    const slider = document.querySelector('[data-banner="slider"]')
+    const btnNext = document.querySelector('[data-banner="btn-next"]')
+    const btnPrevious = document.querySelector('[data-banner="btn-previous"]')
+    const btnControls = document.querySelectorAll('[data-banner="btn-control"]')
+    const imgTitles = document.querySelectorAll('[data-banner="img-title"]')
 
-
-const state = {
-    mouseDownPosition: 0,
-    movementPosition: 0,
-    lastTranslatePosition: 0,
-    currentSliderPosition: 0,
-    currentSlideIndex: 0
-}
-
-function translateSlide(position) {
-    state.lastTranslatePosition = position
-    slider.style.transform = `translateX(${position}px)`
-}
-
-function getCenterPosition(index) {
-    const slide = sliderItems[index]
-    const margin = (document.body.clientWidth - slide.offsetWidth) / 2
-    const centerPosition = margin - (slide.offsetWidth * index)
-    return centerPosition
-}
-
-function animateTransition(active) {
-    if (active) {
-        slider.style.transition = "transform 0.3s"
-    } else {
-        slider.style.removeProperty("transition")
+    const state = {
+        mouseDownPosition: 0,
+        movementPosition: 0,
+        lastTranslatePosition: 0,
+        currentSliderPosition: 0,
+        currentSlideIndex: 0
     }
-}
 
-function activeControlButton(index) {
-    btnControls.forEach(function (item) {
-        item.classList.remove('active')
-    })
-    const btnControl = btnControls[index]
-    btnControl.classList.add('active')
-}
+    function translateSlide(position) {
+        state.lastTranslatePosition = position
+        slider.style.transform = `translateX(${position}px)`
+    }
 
-function activeImageTitle(index) {
-    imgTitles.forEach(function (item) {
-        item.classList.remove('active')
-    })
-    const imgTitle = imgTitles[index]
-    imgTitle.classList.add('active')
-}
+    function getCenterPosition(index) {
+        const slide = sliderItems[index]
+        const margin = (document.body.clientWidth - slide.offsetWidth) / 2
+        const centerPosition = margin - (slide.offsetWidth * index)
+        return centerPosition
+    }
 
-const activeCurrentSlides = () => {
-    sliderItems.forEach((slide, slideIndex) => {
-        slide.classList.remove('active')
-        if (slideIndex === state.currentSlideIndex) {
-            slide.classList.add('active')
+    function animateTransition(active) {
+        if (active) {
+            slider.style.transition = "transform 0.3s"
+        } else {
+            slider.style.removeProperty("transition")
         }
-    })
-}
+    }
 
-function setArrowButtonsDisplay() {
-    btnPrevious.style.display = state.currentSlideIndex === 0 ? 'none' : 'block'
-    btnNext.style.display = state.currentSlideIndex === (sliderItems.length - 1) ? 'none' : 'block'
-}
+    function activeControlButton(index) {
+        btnControls.forEach(function (item) {
+            item.classList.remove('active')
+        })
+        const btnControl = btnControls[index]
+        btnControl.classList.add('active')
+    }
 
-function setVisibleSlide(index) {
-    state.currentSlideIndex = index
-    const position = getCenterPosition(index)
-    activeCurrentSlides()
-    setArrowButtonsDisplay()
-    activeControlButton(index)
-    activeImageTitle(index)
-    animateTransition(true)
-    translateSlide(position)
-}
+    function activeImageTitle(index) {
+        imgTitles.forEach(function (item) {
+            item.classList.remove('active')
+        })
+        const imgTitle = imgTitles[index]
+        imgTitle.classList.add('active')
+    }
 
-function forwardSlide() {
-    if (state.currentSlideIndex < sliderItems.length - 1) {
-        setVisibleSlide(state.currentSlideIndex + 1)
+    const activeCurrentSlides = () => {
+        sliderItems.forEach((slide, slideIndex) => {
+            slide.classList.remove('active')
+            if (slideIndex === state.currentSlideIndex) {
+                slide.classList.add('active')
+            }
+        })
+    }
 
-    } else {
+    function setArrowButtonsDisplay() {
+        btnPrevious.style.display = state.currentSlideIndex === 0 ? 'none' : 'block'
+        btnNext.style.display = state.currentSlideIndex === (sliderItems.length - 1) ? 'none' : 'block'
+    }
+
+    function setVisibleSlide(index) {
+        state.currentSlideIndex = index
+        const position = getCenterPosition(index)
+        activeCurrentSlides()
+        setArrowButtonsDisplay()
+        activeControlButton(index)
+        activeImageTitle(index)
+        animateTransition(true)
+        translateSlide(position)
+    }
+
+    function forwardSlide() {
+        if (state.currentSlideIndex < sliderItems.length - 1) {
+            setVisibleSlide(state.currentSlideIndex + 1)
+
+        } else {
+            setVisibleSlide(state.currentSlideIndex)
+        }
+    }
+
+    function backwardSlide() {
+        if (state.currentSlideIndex > 0) {
+            setVisibleSlide(state.currentSlideIndex - 1)
+
+        } else {
+            setVisibleSlide(state.currentSlideIndex)
+        }
+    }
+
+    function preventDefault(event) {
+        event.preventDefault();
+    }
+
+    function onControlButtonClick(event, index) {
+        setVisibleSlide(index)
+    }
+
+    //Botão do mouser sendo precionado
+    function onMouseDown(event, index) {
+        const slide = event.currentTarget;
+        state.mouseDownPosition = event.clientX
+        state.currentSliderPosition = event.clientX - state.lastTranslatePosition
+        state.currentSlideIndex = index
+        animateTransition(false)
+        slide.addEventListener("mousemove", onMouseMove);
+    }
+
+
+
+    //Mouser movendo em cima do elemento (slider)
+    function onMouseMove(event) {
+        state.movementPosition = event.clientX - state.mouseDownPosition
+        translateSlide(event.clientX - state.currentSliderPosition)
+    }
+
+    //Botão do mouser sendo solto 
+    function onMouseUp(event) {
+        const slide = event.currentTarget;
+        const movementQtd = event.type.includes('touch') ? 50 : 150
+        if (state.movementPosition > movementQtd) {
+            backwardSlide()
+        } else if (state.movementPosition < -movementQtd) {
+            forwardSlide()
+        } else {
+            setVisibleSlide(state.currentSlideIndex)
+        }
+        state.movementPosition = 0
+        slide.removeEventListener("mousemove", onMouseMove);
+    }
+
+    // Quando  o Mouser saiu de cima do elemento
+    function onMouseLeave(event) {
+        const slide = event.currentTarget;
+        slide.removeEventListener("mousemove", onMouseMove);
+    }
+
+    function onResizeWindow() {
         setVisibleSlide(state.currentSlideIndex)
     }
-}
 
-function backwardSlide() {
-    if (state.currentSlideIndex > 0) {
-        setVisibleSlide(state.currentSlideIndex - 1)
-
-    } else {
-        setVisibleSlide(state.currentSlideIndex)
+    function onTouchStart(event, index) {
+        const slide = event.currentTarget;
+        slide.addEventListener('touchmove', onTouchMove)
+        event.clientX = event.touches[0].clientX
+        onMouseDown(event, index)
     }
-}
 
-function preventDefault(event) {
-    event.preventDefault();
-}
-
-function onControlButtonClick(event, index) {
-    setVisibleSlide(index)
-}
-
-//Botão do mouser sendo precionado
-function onMouseDown(event, index) {
-    const slide = event.currentTarget;
-    state.mouseDownPosition = event.clientX
-    state.currentSliderPosition = event.clientX - state.lastTranslatePosition
-    state.currentSlideIndex = index
-    animateTransition(false)
-    slide.addEventListener("mousemove", onMouseMove);
-}
-
-
-
-//Mouser movendo em cima do elemento (slider)
-function onMouseMove(event) {
-    state.movementPosition = event.clientX - state.mouseDownPosition
-    translateSlide(event.clientX - state.currentSliderPosition)
-}
-
-//Botão do mouser sendo solto 
-function onMouseUp(event) {
-    const slide = event.currentTarget;
-    const movementQtd = event.type.includes('touch') ? 50 : 150
-    if (state.movementPosition > movementQtd) {
-        backwardSlide()
-    } else if (state.movementPosition < -movementQtd) {
-        forwardSlide()
-    } else {
-        setVisibleSlide(state.currentSlideIndex)
+    function onTouchMove(event) {
+        event.clientX = event.touches[0].clientX
+        onMouseMove(event)
     }
-    state.movementPosition = 0
-    slide.removeEventListener("mousemove", onMouseMove);
-}
 
-// Quando  o Mouser saiu de cima do elemento
-function onMouseLeave(event) {
-    const slide = event.currentTarget;
-    slide.removeEventListener("mousemove", onMouseMove);
-}
+    function onTouchEnd(event) {
+        const slide = event.currentTarget;
+        slide.removeEventListener('touchmove', onTouchMove)
+        onMouseUp(event)
+    }
 
-function onResizeWindow() {
-    setVisibleSlide(state.currentSlideIndex)
-}
+    function setListeners() {
+        btnNext.addEventListener('click', forwardSlide)
+        btnPrevious.addEventListener('click', backwardSlide)
 
-function onTouchStart(event, index) {
-    const slide = event.currentTarget;
-    slide.addEventListener('touchmove', onTouchMove)
-    event.clientX = event.touches[0].clientX
-    onMouseDown(event, index)
-}
+        sliderItems.forEach(function (slide, index) {
+            const link = slide.querySelector(".banner-slider__link");
+            link.addEventListener("click", preventDefault);
 
-function onTouchMove(event) {
-    event.clientX = event.touches[0].clientX
-    onMouseMove(event)
-}
+            slide.addEventListener("dragstart", preventDefault);
 
-function onTouchEnd(event) {
-    const slide = event.currentTarget;
-    slide.removeEventListener('touchmove', onTouchMove)
-    onMouseUp(event)
-}
+            slide.addEventListener("mousedown", function (event) {
+                onMouseDown(event, index)
+            });
 
-function setListeners() {
-    btnNext.addEventListener('click', forwardSlide)
-    btnPrevious.addEventListener('click', backwardSlide)
+            slide.addEventListener("mouseup", onMouseUp);
 
-    sliderItems.forEach(function (slide, index) {
-        const link = slide.querySelector(".banner-slider__link");
-        link.addEventListener("click", preventDefault);
+            slide.addEventListener("mouseleave", onMouseLeave);
 
-        slide.addEventListener("dragstart", preventDefault);
+            btnControls[index].addEventListener('click', function (event) {
+                onControlButtonClick(event, index)
+            })
 
-        slide.addEventListener("mousedown", function (event) {
-            onMouseDown(event, index)
+            slide.addEventListener('touchstart', function (event) {
+                onTouchStart(event, index)
+            })
+
+            slide.addEventListener('touchend', onTouchEnd)
         });
 
-        slide.addEventListener("mouseup", onMouseUp);
-
-        slide.addEventListener("mouseleave", onMouseLeave);
-
-        btnControls[index].addEventListener('click', function (event) {
-            onControlButtonClick(event, index)
+        let resizeTimeOut;
+        window.addEventListener('resize', function (event) {
+            clearTimeout(resizeTimeOut)
+            resizeTimeOut = setTimeout(function () {
+                onResizeWindow()
+            }, 500)
         })
+    }
 
-        slide.addEventListener('touchstart', function (event) {
-            onTouchStart(event, index)
-        })
+    function init() {
+        setVisibleSlide(2)
+        setListeners()
+    }
 
-        slide.addEventListener('touchend', onTouchEnd)
-    });
-
-    let resizeTimeOut;
-    window.addEventListener('resize', function (event) {
-        clearTimeout(resizeTimeOut)
-        resizeTimeOut = setTimeout(function () {
-            onResizeWindow()
-        }, 500)
-    })
+    return {
+        init
+    }
 }
 
-function init() {
-    setVisibleSlide(2)
-    setListeners();
-}
+export default bannerSliderModule
 
-export default {
-    init,
-};
