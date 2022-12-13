@@ -1,5 +1,6 @@
 .user-profile {
     align-items: center;
+    cursor: pointer;
     display: flex;
 }
 .user-profile--reverse {

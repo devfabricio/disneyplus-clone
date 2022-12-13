@@ -6,3 +6,15 @@
         opacity: 1;
     }
 }
+
+@keyframes slideDown {
+    0% {
+        opacity: .5;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
+
+}
