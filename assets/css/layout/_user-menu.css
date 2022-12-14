@@ -17,7 +17,7 @@
 
 .user-menu__current-profile {
     padding: 1.2rem 0;
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 .user-menu__profiles .user-menu__item{
@@ -35,7 +35,7 @@
     margin-left: 2rem;
     margin-right: 2rem;
     padding-top: .9rem;
-    border-top: .1rem solid #393939;
+    border-top: 1px solid #393939;
 }
 
 .user-menu__options {
@@ -63,6 +63,23 @@
 
 }
 
-.user-menu:hover .show-hover{
+.user-menu:hover .show-hover, 
+.user-menu:hover .user-profile__title {
     display: block;
+}
+
+@media screen and (max-width:1024px) {
+
+    .user-menu .user-profile__title {
+        display: none;
+    }
+
+    .user-menu .user-profile__avatar {
+        height: 3.6rem;
+        width: 3.6rem;
+    }
+
+    .user-menu__current-profile {
+        padding-top: 1.9rem;
+    }
 }
