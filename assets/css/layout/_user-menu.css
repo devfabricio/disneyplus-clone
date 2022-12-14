@@ -16,8 +16,8 @@
 }
 
 .user-menu__current-profile {
-    padding: 1.2rem 0;
-    margin-right: 1rem;
+    padding: 1.2rem 0rem;
+    margin-right: 2rem;
 }
 
 .user-menu__profiles .user-menu__item{
@@ -63,12 +63,19 @@
 
 }
 
+
+
 .user-menu:hover .show-hover, 
 .user-menu:hover .user-profile__title {
     display: block;
 }
 
-@media screen and (max-width:1024px) {
+.user-menu.active .show-hover,
+.user-menu.active .user-profile__title {
+    display: block;
+}
+
+@media screen and (max-width: 1024px) {
 
     .user-menu .user-profile__title {
         display: none;
