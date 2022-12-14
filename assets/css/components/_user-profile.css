@@ -3,6 +3,11 @@
     cursor: pointer;
     display: flex;
 }
+
+.user {
+    padding-bottom: 2rem;
+}
+
 .user-profile--reverse {
     flex-direction: row-reverse;
 }
