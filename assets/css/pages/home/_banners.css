@@ -12,7 +12,7 @@
 
 .banner-slider__item {
     flex-shrink: 0;
-    margin: 0 1rem 3rem;
+    padding: 0 1rem 3rem;
     width: 90vw;
 }
 
@@ -47,6 +47,12 @@
     top: 0;
     width: 100%;
     
+}
+
+.banners .arrow-slider {
+    margin-top: -3rem;
+    position: absolute;
+    z-index: 2;
 }
 
 .banners .arrow-slider--left {
