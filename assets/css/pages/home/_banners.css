@@ -13,7 +13,16 @@
 .banner-slider__item {
     flex-shrink: 0;
     padding: 0 1rem 3rem;
+    position: relative;
     width: 90vw;
+}
+
+.banner-slider__counter {
+    font-size: 2rem;
+    position: absolute;
+    top: 2rem;
+    left: 4rem;
+    z-index: 10;
 }
 
 .banner-slider__link {
@@ -42,11 +51,17 @@
 }
 
 .banner-slider__title {
+    animation: slideLeft 1s;
+    display: none;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
     
+}
+
+.banner-slider__title.active {
+    display: block;
 }
 
 .banners .arrow-slider {

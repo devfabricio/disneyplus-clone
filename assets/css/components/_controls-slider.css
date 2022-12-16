@@ -1,10 +1,13 @@
 .controls-slider {
+    bottom: 0;
     position: absolute;
+    right: 0;
     z-index: 2;
 }
 
 .controls-slider__item {
     background: none;
+    cursor: pointer;
     color: #8c93a1;
     margin: 0 .5rem;
 }
