@@ -17,14 +17,6 @@
     width: 90vw;
 }
 
-.banner-slider__counter {
-    font-size: 2rem;
-    position: absolute;
-    top: 2rem;
-    left: 4rem;
-    z-index: 10;
-}
-
 .banner-slider__link {
     display: block;
     position: relative;
@@ -72,16 +64,34 @@
 
 .banners .arrow-slider--left {
     left: 3.6rem; 
-    position: absolute;
-    z-index: 2;
 }
 .banners .arrow-slider--right {
     right: 3.6rem;
-    position: absolute;
-    z-index: 2;
 }
 
 .banners .controls-slider {
     bottom: 4.6rem;
     right: 11.6rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .banners {
+        padding-top: 8.2rem;
+    }
+
+    .banner-slider__item {
+        width: 85vw;
+    }
+    .banners .arrow-slider--left {
+        left: 1rem; 
+    }
+    .banners .arrow-slider--right {
+        right: 1rem;
+    }
+
+    .banners .controls-slider {
+        bottom: 4.2rem;
+        right: 50%;
+        transform: translateX(50%);
+    }
 }

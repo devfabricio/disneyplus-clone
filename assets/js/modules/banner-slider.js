@@ -104,13 +104,13 @@ function onMouseMove(event) {
 // quando solta o botão do mouse
 function onMouseUp(event) {
     const slide = event.currentTarget
-    if(state.movimentPosition > 150) {
+    const movementQtd = event.type.includes('touch') ? 50 : 150
+    if(state.movimentPosition > movementQtd) {
         backwardSlide()
-    } else if(state.movimentPosition < -150) {
+    } else if(state.movimentPosition < -movementQtd) {
         fowardSlide()
     } else {
-        const calc = getCenterPosition(state.currentSlideIndex)
-        translateSlide(calc)
+        setVisibleSlide(state.currentSlideIndex)
     }
     slide.removeEventListener('mousemove', onMouseMove)
     
@@ -122,6 +122,27 @@ function onMouseLeave(event) {
     slide.removeEventListener('mousemove', onMouseMove)
 }
 
+function onTouchStart(event, index) {
+    const slide = event.currentTarget
+    slide.addEventListener('touchmove', onTouchMove)
+    event.clientX = event.touches[0].clientX
+    onMouseDown(event, index)
+}
+
+function onTouchMove(event) {
+    event.clientX = event.touches[0].clientX
+    onMouseMove(event)
+}
+
+function onTouchEnd(event) {
+    const slide = event.currentTarget
+    slide.removeEventListener('touchmove', onTouchMove)
+    onMouseUp(event)
+}
+
+function onResizeWindown() {
+    setVisibleSlide(state.currentSlideIndex)
+}
 
 function setListeners() {
     btnNext.addEventListener('click', fowardSlide)
@@ -136,7 +157,19 @@ function setListeners() {
         slide.addEventListener('mouseup', onMouseUp)
         slide.addEventListener('mouseleave', onMouseLeave)
         btnControls[index].addEventListener('click', function(event) {
-            onControlButtonClick(event, index)})
+            onControlButtonClick(event, index)
+        })
+        slide.addEventListener('touchstart', function(event) {
+            onTouchStart(event, index)
+        })
+        slide.addEventListener('touchend', onTouchEnd)
+    })
+    let resizeTimeOut;
+    window.addEventListener('resize', function(event) {
+        clearTimeout(resizeTimeOut)
+        resizeTimeOut = setTimeout(function() {
+            onResizeWindown()
+        }, 1000)
     })
 }
 
