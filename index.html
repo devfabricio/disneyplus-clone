@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney+ | Filmes e Séries</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/imgs/icons8-disney-16.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="background-fixed"></div>
+    <div class="wrapper">
+        <header class="header" data-header>
+            <div class="logo">
+                <a class="logo__link" href="/"></a>
+            </div>
+            <nav class="header__navigation">
+                <ul class="nav-menu">
+                    <li class="nav-menu__item">
+                        <a href="/" class="nav-menu__link">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="nav-menu__text">Ínicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="/" class="nav-menu__link">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <span class="nav-menu__text">Pesquisa</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item">
+                        <a href="/" class="nav-menu__link">
+                            <i class="fa-solid fa-plus"></i>
+                            <span class="nav-menu__text">Minha Lista</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item mobile-hidden">
+                        <a href="/" class="nav-menu__link">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="nav-menu__text">Originais</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item mobile-hidden">
+                        <a href="/" class="nav-menu__link">
+                            <i class="fa-solid fa-film"></i>
+                            <span class="nav-menu__text">Filmes</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item mobile-hidden">
+                        <a href="/" class="nav-menu__link">
+                            <i class="fa-solid fa-tv"></i>
+                            <span class="nav-menu__text">Séries</span>
+                        </a>
+                    </li>
+                    <li class="nav-menu__item dropdown">
+                        <a href="#" class="nav-menu__link" data-open-navsubmenu>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <span class="nav-menu__text"></span>
+                        </a>
+                        <ul class="nav-submenu" data-navsubmenu>
+                            <li class="nav-submenu__item mobile-hidden">
+                                <a href="/" class="nav-submenu__link">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span class="nav-submenu__text">Originais</span>
+                                </a>
+                            </li>
+                            <li class="nav-submenu__item mobile-hidden">
+                                <a href="/" class="nav-submenu__link">
+                                    <i class="fa-solid fa-film"></i>
+                                    <span class="nav-submenu__text">Filmes</span>
+                                </a>
+                            </li>
+                            <li class="nav-submenu__item mobile-hidden">
+                                <a href="/" class="nav-submenu__link">
+                                    <i class="fa-solid fa-tv"></i>
+                                    <span class="nav-submenu__text">Séries</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="user-menu" data-usermenu>
+                    <div class="user-menu__background show-hover"></div>
+                    <div class="user-menu__current-profile" data-open-usermenu>
+                        <div class="user-profile user user-profile--reverse">
+                            <img class="user-profile__avatar" src="assets/imgs/avatar.png">
+                            <span class="user-profile__title">Vinícius</span>
+                        </div>
+                        <ul class="user-menu__profiles show-hover">
+                            <li class="user-menu__item">
+                                <div class="user-profile user-profile">
+                                    <img class="user-profile__avatar" src="assets/imgs/avatar.png">
+                                    <span class="user-profile__title">Júlia</span>
+                                </div>
+                            </li>
+                            <li class="user-menu__item">
+                                <div class="user-profile user-profile">
+                                    <img class="user-profile__avatar" src="assets/imgs/avatar.png">
+                                    <span class="user-profile__title">Chloe</span>
+                                </div>
+                            </li>
+                            <li class="user-menu__item">
+                                <div class="user-profile user-profile">
+                                    <img class="user-profile__avatar" src="assets/imgs/avatar.png">
+                                    <span class="user-profile__title">Ronaldo</span>
+                                </div>
+                            </li>
+                            <li class="user-menu__item">
+                                <div class="user-profile user-profile">
+                                    <img class="user-profile__avatar" src="assets/imgs/avatar.png">
+                                    <span class="user-profile__title">Messi</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="user-menu__options show-hover">
+                            <li class="user-menu__item">
+                                <a href="/" class="user-menu__link">Editar Perfis</a>
+                            </li>
+                            <li class="user-menu__item">
+                                <a href="/" class="user-menu__link">Configurações do Aplicativo</a>
+                            </li>
+                            <li class="user-menu__item">
+                                <a href="/" class="user-menu__link">Conta</a>
+                            </li>
+                            <li class="user-menu__item">
+                                <a href="/" class="user-menu__link">Ajuda</a>
+                            </li>
+                            <li class="user-menu__item">
+                                <a href="/" class="user-menu__link">Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="banners">
+                <button class="arrow-slider arrow-slider--left" data-banner="btn-previous"></button>
+                    <button class="arrow-slider arrow-slider--right" data-banner="btn-next"></button>
+                    <div class="controls-slider">
+                        <button class="controls-slider__item" data-banner="btn-control"></button>
+                        <button class="controls-slider__item" data-banner="btn-control"></button>
+                        <button class="controls-slider__item" data-banner="btn-control"></button>
+                        <button class="controls-slider__item" data-banner="btn-control"></button>
+                        <button class="controls-slider__item" data-banner="btn-control"></button>
+                        <button class="controls-slider__item" data-banner="btn-control"></button>
+                    </div>
+                <div class="banner-slider" data-banner="slider">
+                    <div class="banner-slider__item" data-banner="item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="assets/imgs/exemple/banner-exemple.jpeg" alt="Mandalorian">
+                            <img class="banner-slider__title" src="assets/imgs/exemple/banner-title-exemple.png" alt="Mandalorian" data-banner="img-title">
+                        </a>
+                    </div>
+                    <div class="banner-slider__item" data-banner="item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="assets/imgs/exemple/banner-exemple.jpeg" alt="Mandalorian">
+                            <img class="banner-slider__title" src="assets/imgs/exemple/banner-title-exemple.png" alt="Mandalorian" data-banner="img-title">
+                        </a>
+                    </div>
+                    <div class="banner-slider__item" data-banner="item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="assets/imgs/exemple/banner-exemple.jpeg" alt="Mandalorian">
+                            <img class="banner-slider__title" src="assets/imgs/exemple/banner-title-exemple.png" alt="Mandalorian" data-banner="img-title">
+                        </a>
+                    </div>
+                    <div class="banner-slider__item" data-banner="item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="assets/imgs/exemple/banner-exemple.jpeg" alt="Mandalorian">
+                            <img class="banner-slider__title" src="assets/imgs/exemple/banner-title-exemple.png" alt="Mandalorian" data-banner="img-title">
+                        </a>
+                    </div>
+                    <div class="banner-slider__item" data-banner="item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="assets/imgs/exemple/banner-exemple.jpeg" alt="Mandalorian">
+                            <img class="banner-slider__title" src="assets/imgs/exemple/banner-title-exemple.png" alt="Mandalorian" data-banner="img-title">
+                        </a>
+                    </div>
+                    <div class="banner-slider__item" data-banner="item">
+                        <a href="/" class="banner-slider__link">
+                            <img class="banner-slider__cover" src="assets/imgs/exemple/banner-exemple.jpeg" alt="Mandalorian">
+                            <img class="banner-slider__title" src="assets/imgs/exemple/banner-title-exemple.png" alt="Mandalorian" data-banner="img-title">
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="categories">
+                <ul class="category-menu">
+                    <li class="category-menu__item">
+                        <video class="category-menu__video" src="assets/videos/category-disney.mp4" autoplay loop muted></video>
+                        <a href="/" class="category-menu__link">
+                            <img src="assets/imgs/categories/disney.png" alt="Disney Logo" class="category-menu__img">
+                        </a>
+                    </li>
+                    <li class="category-menu__item">
+                        <video class="category-menu__video" src="assets/videos/category-pixar.mp4" autoplay loop muted></video>
+                        <a href="/" class="category-menu__link">
+                            <img src="assets/imgs/categories/pixar.png" alt="Pixar Logo" class="category-menu__img">
+                        </a>
+                    </li>
+                    <li class="category-menu__item">
+                        <video class="category-menu__video" src="assets/videos/category-marvel.mp4" autoplay loop muted></video>
+                        <a href="/" class="category-menu__link">
+                            <img src="assets/imgs/categories/marvel.png" alt="Marvel Logo" class="category-menu__img">
+                        </a>
+                    </li>
+                    <li class="category-menu__item">
+                        <video class="category-menu__video" src="assets/videos/category-star-wars.mp4" autoplay loop muted></video>
+                        <a href="/" class="category-menu__link">
+                            <img src="assets/imgs/categories/star-wars.png" alt="Star-Wars Logo" class="category-menu__img">
+                        </a>
+                    </li>
+                    <li class="category-menu__item">
+                        <video class="category-menu__video" src="assets/videos/category-national-geographic.mp4" autoplay loop muted></video>
+                        <a href="/" class="category-menu__link">
+                            <img src="assets/imgs/categories/national-geographic.png" alt="National-Geographic Logo" class="category-menu__img">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="collections">
+                <div class="colletion" data-carousel="collection">
+                    <h3 class="colletcion__title">Recomendado para Você</h3>
+                    <div class="movie-carousel">
+                        <button class="arrow-slider arrow-slider--left" data-carousel="btn-previous"></button>
+                        <button class="arrow-slider arrow-slider--right" data-carousel="btn-next"></button>
+                        <ul class="movie-carousel__list" data-carousel="list">
+                            <li class="movie-carousel__item" data-carousel="item">
+                                <a href="/" class="movie-carousel__link">
+                                    <img src="assets/imgs/exemple/movie-exemple.jpeg" alt="Movie Exemplo" class="movie-carousel__cover">
+                                </a>
+                            </li>
+                            <li class="movie-carousel__item" data-carousel="item">
+                                <a href="/" class="movie-carousel__link">
+                                    <img src="assets/imgs/exemple/movie-exemple.jpeg" alt="Movie Exemplo" class="movie-carousel__cover">
+                                </a>
+                            </li>
+                            <li class="movie-carousel__item" data-carousel="item">
+                                <a href="/" class="movie-carousel__link">
+                                    <img src="assets/imgs/exemple/movie-exemple.jpeg" alt="Movie Exemplo" class="movie-carousel__cover">
+                                </a>
+                            </li>
+                            <li class="movie-carousel__item" data-carousel="item">
+                                <a href="/" class="movie-carousel__link">
+                                    <img src="assets/imgs/exemple/movie-exemple.jpeg" alt="Movie Exemplo" class="movie-carousel__cover">
+                                </a>
+                            </li>
+                            <li class="movie-carousel__item" data-carousel="item">
+                                <a href="/" class="movie-carousel__link">
+                                    <img src="assets/imgs/exemple/movie-exemple.jpeg" alt="Movie Exemplo" class="movie-carousel__cover">
+                                </a>
+                            </li>
+                            <li class="movie-carousel__item">
+                                <a href="/" class="movie-carousel__link" data-carousel="item">
+                                    <img src="assets/imgs/exemple/movie-exemple.jpeg" alt="Movie Exemplo" class="movie-carousel__cover">
+                                </a>
+                            </li>
+                            <li class="movie-carousel__item">
+                                <a href="/" class="movie-carousel__link" data-carousel="item">
+                                    <img src="assets/imgs/exemple/movie-exemple.jpeg" alt="Movie Exemplo" class="movie-carousel__cover">
+                                </a>
+                            </li>
+                            <li class="movie-carousel__item">
+                                <a href="/" class="movie-carousel__link" data-carousel="item">
+                                    <img src="assets/imgs/exemple/movie-exemple.jpeg" alt="Movie Exemplo" class="movie-carousel__cover">
+                                </a>
+                            </li>
+                            <li class="movie-carousel__item">
+                                <a href="/" class="movie-carousel__link" data-carousel="item">
+                                    <img src="assets/imgs/exemple/movie-exemple.jpeg" alt="Movie Exemplo" class="movie-carousel__cover">
+                                </a>
+                            </li>
+                            <li class="movie-carousel__item">
+                                <a href="/" class="movie-carousel__link" data-carousel="item">
+                                    <img src="assets/imgs/exemple/movie-exemple.jpeg" alt="Movie Exemplo" class="movie-carousel__cover">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+    </div>
+
+
+
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+
+</html>
