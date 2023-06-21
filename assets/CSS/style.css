@@ -1,3 +1,13 @@
-@import url(components-logo.css);
-@import url(_header.css);
-@import url(_main.css);
+@import url(/assets/CSS/base/fonts.css);
+/**/
+@import url(/assets/CSS/_header.css);
+@import url(/assets/CSS/_main.css);
+/**/
+@import url(/assets/CSS/base/reset.css);
+@import url(/assets/CSS/base/global.css);
+@import url(/assets/CSS/components/logo.css);
+@import url(/assets/CSS/components/user-profile.css);
+@import url(/assets/CSS/layouts/header.css);
+@import url(/assets/CSS/layouts/nav-menu.css);
+@import url(/assets/CSS/base/animation.css);
+@import url(/assets/CSS/layouts/user-menu.css);
