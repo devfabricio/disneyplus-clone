@@ -36,7 +36,9 @@
 
 .banner-slide-title {
     left: 0;
+    display: block;
     position: absolute;
+    animation: slideLeft 1s;
     top: 0;
     width: 100%;
 
