@@ -1,3 +1,4 @@
+
 const header = document.querySelector('[data-header]')
 const openNavSubmenu = document.querySelector('[data-open-navsubmenu]')
 const navSubmenu = document.querySelector('[data-navsubmenu]')
