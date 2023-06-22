@@ -59,10 +59,14 @@ animation: showFade .5s;
 background:  #141414;
 border: solid .1rem #393939;
 border-radius: .5rem;
+margin: -2rem;
 padding: .5rem;
 display: none;
-position: relative;
-top:  -2rem;
+position: absolute;
+}
+
+.nav-submenu.active{
+    display: block;
 }
 
 .nav-submenu-text {

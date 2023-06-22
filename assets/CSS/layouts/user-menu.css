@@ -61,8 +61,14 @@
     display: none;
 }
 
+
 .user-menu:hover .show-hover,
 .user-menu:hover .user-profile-title{
+    display: block;
+}
+
+.user-menu.active .show-hover,
+.user-menu.active .user-profile-title{
     display: block;
 }
 
