@@ -1,0 +1,46 @@
+.banners {
+    padding-top: 9.7rem;
+}
+
+.banner-slide-item {
+    margin: 0 auto;
+    width: 90vw;
+}
+
+.banner-slide-link {
+    display: block;
+    position: relative;
+}
+
+.banner-slide-link::before{
+    border: none;
+    border-radius: .5rem;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: border .3s;
+}
+
+.banner-slide-link:hover::before {
+    border: 3px solid rgba(255, 255, 255, 0.7);
+
+}
+
+
+
+.banner-slide-cover{
+    border-radius: .5rem;
+    display: block;
+    width: 100%;
+}
+
+.banner-slide-title {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+}
