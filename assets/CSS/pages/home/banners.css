@@ -13,19 +13,16 @@
 }
 
 .banner-slide-link::before{
-    border: none;
+    border: .4rem solid rgba(255, 255, 255, 0);
     border-radius: .5rem;
     content: '';
     position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     transition: border .3s;
 }
 
 .banner-slide-link:hover::before {
-    border: 3px solid rgba(255, 255, 255, 0.7);
+    border-color:rgba(255, 255, 255, 0.7);
 
 }
 
