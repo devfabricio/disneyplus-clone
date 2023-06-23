@@ -1,14 +1,16 @@
 .banners {
+    align-items: center;
+    display: flex;
     padding-top: 9.7rem;
+    overflow: hidden;
 }
 
 .banner-slider{
-    align-items: center;
     display: flex;
     position: relative;
 }
 
-.banner-slider-item {
+.banner-slide-item {
     margin: 0 auto;
     width: 90vw;
 }
@@ -18,8 +20,8 @@
     position: relative;
 }
 
-.banner-slider-link::before{
-    border: .3rem solid rgba(255, 255, 255, 0);
+.banner-slide-link::before{
+    border: .4rem solid rgba(255, 255, 255, 0);
     border-radius: .5rem;
     content: '';
     position: absolute;
@@ -41,20 +43,11 @@
     width: 100%;
 }
 
-.banner-slider-title{
+.banner-slide-title {
     left: 0;
+    display: block;
     position: absolute;
     top: 0;
     width: 100%;
 
-}
-
-.banner-slider .arrow-slider-left {
-    left: 0;
-    position: absolute;
-}
-
-.banner-slider .arrow-slider-right {
-    right: 0;
-    position: absolute;
 }
