@@ -1,15 +1,5 @@
 .arrow-slider{
     background: none;
-    color: white;
-    font-family: 'Font Awesome 6 Free';
-    font-size: 4rem;
-}
-
-.arrow-slider-left::before{
-    content: '\f053';
-}
-.arrow-slider-right::before{
-    content: '\f054';
     cursor: pointer;
     color: white;
     font-family: 'Font Awesome 6 Free';
