@@ -3,6 +3,7 @@
     display: flex;
     padding-top: 9.7rem;
     overflow: hidden;
+   
 }
 
 .banner-slider{
@@ -11,10 +12,11 @@
 }
 
 .banner-slider-item {
-    padding: 0 1rem 3rem;
     flex-shrink: 0;
+    padding: 0 1rem 3rem;
     position: relative;
-    width: 90vw;
+    width: 91vw;
+    
 }
 
 .banner-slider-counter{
@@ -55,15 +57,21 @@
 }
 
 .banner-slider-title {
+    animation: slideLeft 1s;
     left: 0;
-    display: block;
+    display: none;
     position: absolute;
     top: 0;
     width: 100%;
 
 }
 
-.banner .arrow-slider{
+.banner-slider-title.active {
+    display: block;
+
+}
+
+.banners .arrow-slider{
     margin-top: -3rem;
     position: absolute;
     z-index: 2;
@@ -72,14 +80,12 @@
 .banners .arrow-slider-left{
     left: 3.6rem;
     position: absolute;
-    z-index: 2;
 }
 
 .banners .arrow-slider-right{
     right: 3.6rem;
     position: absolute;
-    z-index: 2;
-}
+    }
 
 .banners .controls-slider{
     bottom: 4.6rem;

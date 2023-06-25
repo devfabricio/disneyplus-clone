@@ -1,6 +1,6 @@
 
 .nav-menu {
-    margin-left: 2.2rem;
+    margin-left: 3.7rem;
 }
 
 .nav-menu-item {
@@ -35,7 +35,7 @@ position: relative;
 .nav-menu-text::before {
 background-color: white;
 content: '';
-height: 3px;
+height: .2rem;
 bottom: -.8rem;
 position: absolute;
 transition: width .2s;
@@ -60,7 +60,7 @@ background:  #141414;
 border: solid .1rem #393939;
 border-radius: .5rem;
 margin: -2rem;
-padding: .5rem;
+padding: 0.4rem 0;
 display: none;
 position: absolute;
 }
