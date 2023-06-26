@@ -2,6 +2,7 @@
     align-items: center;
     display: flex;
     padding-top: 9.7rem;
+    position: relative;
     overflow: hidden;
    
 }
