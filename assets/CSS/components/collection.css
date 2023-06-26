@@ -59,7 +59,7 @@
 }
 
 .movie-carousel .arrow-slider{
-    margin-top: -2.5;
+    margin-top: -2.5rem;
     position: absolute;
     z-index: 2;
 }
