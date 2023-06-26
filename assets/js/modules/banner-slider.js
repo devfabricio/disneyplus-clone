@@ -21,7 +21,7 @@ function translateSlide(position){
 
 function getCenterPosition(index) {
     const slide = sliderItems[index]
-    const margin = (window.innerWidth - slide.offsetWidth) / 2
+    const margin = (document.body.clientWidth - slide.offsetWidth) / 2
     const centerPosition = margin - (slide.offsetWidth * index)
     return centerPosition
 }
@@ -174,7 +174,7 @@ function setListeners(){
     
 
 function init() {
-setVisibleSlide(0)
+setVisibleSlide(2)
    setListeners()
 }
 

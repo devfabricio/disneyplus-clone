@@ -3,6 +3,7 @@
     display: flex;
     padding-top: 9.7rem;
     overflow: hidden;
+    position: relative;
    
 }
 
@@ -63,6 +64,7 @@
 }
 
 .banners .arrow-slider{
+    text-shadow: 1px 1px 1px black;
     margin-top: -3rem;
     position: absolute;
     z-index: 2;
@@ -87,7 +89,7 @@
     }
 
     .banner-slider-item {
-        width: 85vw;
+        width: 65vw;
     }
 
     .banners .arrow-slider-left{
