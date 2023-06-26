@@ -174,7 +174,7 @@ function setListeners(){
     
 
 function init() {
-setVisibleSlide(0)
+setVisibleSlide(2)
    setListeners()
 }
 
