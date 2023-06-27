@@ -66,9 +66,25 @@ function activeImageTitle(index){
     imgTitle.classList.add('active')
 }
 
+const activeCurrentSlides = () => {
+    sliderItems.forEach((slide, slideIndex) => {
+        slide.classList.remove('active')
+        if (slideIndex == state.currentSlideIndex){
+            slide.classList.add('active')
+        }
+    })
+}
+
+function setArrowButtonsDisplay(){
+    btnPrevious.style.display = state.currentSlideIndex === 0 ? 'none' : 'block'
+    btnNext.style.display = state.currentSlideIndex === (sliderItems.length - 1) ? 'none' : 'block'
+}
+
 function setVisibleSlide(index){
     state.currentSlideIndex = index
     const position = getCenterPosition(index)
+    activeCurrentSlides()
+    setArrowButtonsDisplay()
     activeControlButton(index)
     activeImageTitle(index)
     animateTransition(true)
@@ -109,6 +125,7 @@ function onMouseUp(event){
     }else {
         setVisibleSlide(state.currentSlideIndex)
     }
+    state.movementPosition = 0
     slide.removeEventListener('mousemove', onMouseMove)    
 }
 
