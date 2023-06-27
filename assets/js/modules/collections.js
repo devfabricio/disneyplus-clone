@@ -1,16 +1,6 @@
-const carouselList = document.querySelector('[data-carousel="list"]')
-const carouselItems = document.querySelectorAll('[data-carousel="item"]')
-const btnPrevious = document.querySelectorAll('[data-carousel="btn-previous"]')
-const btnNext = document.querySelectorAll('[data-carousel="btn-next"]')
+const collections = document.querySelectorAll('[data-carousel="collection"]')
+const collectionData = []
 
-const state = {
-    mouseDownPosition: 0,
-    movement: 0,
-    lastTranslatePosition: 0,
-    currentSlidePosition: 0,
-    currentItemIndex: 0,
-    currentSlideIndex: 0
-}
 
 const preventDefault = event => {
     event.preventDefault()
@@ -52,8 +42,27 @@ const onMouseLeave = (event) => {
     item.removeEventListener('mousemove', onMouseMove)    
 }
 
-const setListeners = () => {
-    carouselItems.forEach((item, index) => {
+const insertCollectionData = (collection) => {
+    collectionData.push({
+        carouselList: collection.querySelector('[data-carousel="list"]'),
+        carouselItems: collection.querySelectorAll('[data-carousel="item"]'),
+        btnPrevious: collection.querySelectorAll('[data-carousel="btn-previous"]'),
+        btnNext: collection.querySelectorAll('[data-carousel="btn-next"]'),
+    
+        state: {
+        mouseDownPosition: 0,
+        movement: 0,
+        lastTranslatePosition: 0,
+        currentSlidePosition: 0,
+        currentItemIndex: 0,
+        currentSlideIndex: 0
+    }
+    })
+}
+
+const setListeners = (collectionIndex) => {
+    const data = collectionData[collectionIndex]
+    data.carouselItems.forEach((item, index) => {
         const link = item.querySelector('.movie-carousel-link')
         link.addEventListener('click', preventDefault)
         item.addEventListener('dragstart', preventDefault)
@@ -69,6 +78,10 @@ const setListeners = () => {
 
 
 const init = ()=>{
+    collections.forEach((collection, collectionIndex) => {
+        insertCollectionData(collection)
+        setListeners(collectionIndex)
+    })
     setListeners()
 }
 
