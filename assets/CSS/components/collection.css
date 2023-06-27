@@ -73,6 +73,9 @@
     }
 
     @media screen and (max-width: 1024px) {
+        .collection{
+            padding-top: 0rem;
+        }
         .collection-title {
             width: 85vw;
         }

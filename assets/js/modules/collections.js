@@ -104,6 +104,24 @@ const onMouseLeave = (event) => {
     item.removeEventListener('mousemove', onMouseMove)    
 }
 
+const onTouchStart = (event, itemIndex) => {
+    const item = event.currentTarget 
+    item.addEventListener('touchmove', onTouchMove)
+    event.clientX = event.touches[0].clientX
+    onMouseDown(event, itemIndex)
+}
+
+const onTouchMove = (event)=> {
+    event.clientX = event.touches[0].clientX
+    onMouseMove(event)
+}
+
+const onTouchEnd = (event) => {
+    const item = event.currentTarget 
+    item.removeEventListener('touchmove', onTouchMove)
+    onMouseUp(event)
+} 
+
 const insertCollectionData = (collection) => {
     collectionData.push({
     
@@ -131,6 +149,20 @@ const setItemsPerSlide = () => {
     itemsPerSlide = 5
 }
 
+const setWindowResizeListener = () => {
+    let resizeTimeout;
+    window.addEventListener('resize', function(event) {
+        clearTimeout = (resizeTimeout)
+        resizeTimeout = setTimeout(function() {
+            setItemsPerSlide()
+            collections.forEach((_, collectionIndex) => {
+                currentCollectionIndex = collectionIndex
+                setVisibleSlide(0)
+            })
+        }, 1000)
+    })
+
+}
 const setListeners = (collectionIndex) => {
     const {btnNext, btnPrevious, carouselItems} = collectionData[collectionIndex]
     btnNext.addEventListener('click', () => { 
@@ -151,6 +183,11 @@ const setListeners = (collectionIndex) => {
         })
         item.addEventListener('mouseup', onMouseUp)
         item.addEventListener('mouseleave', onMouseLeave)
+        item.addEventListener('touchstart', function(event) {
+            currentCollectionIndex = collectionIndex
+            onTouchStart(event, itemIndex)
+        })
+        item.addEventListener('touchend', onTouchEnd)
         
 
     })
@@ -159,6 +196,7 @@ const setListeners = (collectionIndex) => {
 
 const init = ()=>{
     setItemsPerSlide()
+    setWindowResizeListener()
     collections.forEach((collection, collectionIndex) => {
         currentCollectionIndex = collectionIndex
         insertCollectionData(collection)
