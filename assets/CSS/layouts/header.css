@@ -23,18 +23,8 @@ width: 7.5rem;
 }
 
 @media screen and (max-width: 1024px) {
-.logo {
-    margin-left: 1.2rem;
-    padding-top: 2.5rem;
+.header .logo {
+    margin-left: 2.2rem;
+    padding-top: 2.0rem;
 }
-
-.logo-link {
-    height: 2.2rem;
-    width: 5.9rem;
-}
-
-}
-
-.header-nav {
-width: 100%;
 }
