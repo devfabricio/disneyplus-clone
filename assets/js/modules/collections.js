@@ -1,3 +1,5 @@
+
+const collectionsModule = () => {
 const collections = document.querySelectorAll('[data-carousel="collection"]')
 const collectionData = []
 let currentCollectionIndex = 0
@@ -227,6 +229,11 @@ const init = ()=>{
     
 }
 
-export default{
+    return{
     init
+    }
+
 }
+
+export default collectionsModule
+
