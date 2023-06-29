@@ -1,0 +1,89 @@
+
+.user-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.user-menu-background{
+    animation: slideDown .4s;
+    background-color: #141414;
+    border: 1px solid #393939;
+    border-radius: .5rem;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.user-menu-current-profile {
+    padding: 1.2rem 2rem 0;
+    
+}
+
+.user-menu-profiles .user-menu-item{
+    padding: 0.7rem 0;
+}
+
+.user-menu-options .user-menu-link {
+    color: #c3c3c3;
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 1.3rem 2rem;
+}
+
+.user-menu-profiles {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-top: .9rem;
+    border-top: 1px solid #393939;
+    
+}
+
+.user-menu-options{
+    padding-bottom: 2.2rem;
+}
+
+.user-menu-link:hover{
+    color: #fff;
+}
+
+.user-menu-current-profile,
+.user-menu-profiles,
+.user-menu-options{
+    position: relative;
+    z-index: 2;
+}
+
+.user-menu-profiles,
+.user-menu-options{
+    animation: showFade .3s;
+}
+
+.user-menu .show-hover{
+    display: none;
+}
+
+
+.user-menu:hover .show-hover,
+.user-menu:hover .user-profile-title{
+    display: block;
+}
+
+.user-menu.active .show-hover,
+.user-menu.active .user-profile-title{
+    display: block;
+}
+
+@media screen and(max-width: 1024px){
+    .user-menu .user-profile-title{
+        display: none;
+    }
+    .user-menu .user-profile-avatar{
+        height: 3.6rem;
+        width: 3.6rem;
+    }
+    .user-menu-current-profile {
+        padding-top: 1.9rem;
+    }
+}

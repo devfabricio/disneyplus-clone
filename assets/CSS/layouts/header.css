@@ -1,0 +1,30 @@
+
+.header {
+    display: flex;
+    position: fixed;
+    transition: background-color .3s;
+    z-index: 10;
+    width: 100%;
+}
+
+.logo {
+margin-left: 3.8rem;
+padding-top: 1.6rem;
+}
+
+.logo-link {
+background: url(/assets/imgs/minhaLogo.png) no-repeat;
+background-position: center;
+background-size: 134%;
+display: inline-block;
+height: 4rem;
+width: 7.5rem;
+
+}
+
+@media screen and (max-width: 1024px) {
+.header .logo {
+    margin-left: 2.2rem;
+    padding-top: 2.0rem;
+}
+}

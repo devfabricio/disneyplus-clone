@@ -1,0 +1,122 @@
+.banners {
+    align-items: center;
+    display: flex;
+    padding-top: 9.7rem;
+    position: relative;
+    overflow: hidden;
+    position: relative;
+   
+}
+
+.banner-slider{
+    display: flex;
+    position: relative;
+}
+
+.banner-slider-item {
+    flex-shrink: 0;
+    opacity: .5;
+    padding: 0 1rem 3rem;
+    position: relative;
+    width: 91vw;
+    
+}
+
+.banner-slider-item.active{
+    opacity: 1;
+}
+
+.banner-slider-link {
+    display: block;
+    position: relative;
+}
+
+.banner-slider-link::before{
+    border: .4rem solid rgba(255, 255, 255, 0);
+    border-radius: .5rem;
+    content: '';
+    position: absolute;
+    inset: 0;
+    transition: border .3s;
+}
+
+.banner-slider-link:hover::before {
+    border-color:rgba(255, 255, 255, 0.7);
+
+}
+
+
+
+.banner-slider-cover{
+    border-radius: .5rem;
+    box-shadow: #000 0rem 2rem 3rem -2rem;
+    display: block;
+    width: 100%;
+}
+
+.banner-slider-title {
+    animation: slideLeft 1s;
+    left: 0;
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+}
+
+.banner-slider-title.active {
+    display: block;
+
+}
+
+.banners .arrow-slider{
+    height: 100%;
+    margin-top: -3rem;
+    opacity: 0;    
+    position: absolute;
+    transition: opacity .3s;
+    z-index: 2;
+}
+
+.banners .arrow-slider:hover{
+    opacity: 1;
+}
+
+.banners .arrow-slider-left{
+    padding: 0 3.6rem;
+    left: 0;
+}
+
+.banners .arrow-slider-right{
+    padding: 0 3.6rem;
+    right: 0;
+}
+
+.banners .controls-slider{
+    bottom: 4.6rem;
+    right: 11.6rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .banners {
+        padding-top: 8.2rem;  
+    }
+
+    .banner-slider-item {
+        width: 65vw;
+    }
+
+    .banners .arrow-slider-left{
+        left: 1rem;
+    }
+    
+    .banners .arrow-slider-right{
+        right: 1rem;
+        }
+
+    .banners .controls-slider{
+        bottom: 4.2rem;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}

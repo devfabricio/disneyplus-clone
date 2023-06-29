@@ -1,0 +1,94 @@
+
+.nav-menu {
+    margin-left: 3.7rem;
+}
+
+.nav-menu-item {
+display: inline;
+vertical-align: top;
+}
+
+.nav-submenu-link,
+.nav-menu-link {
+color: white;
+display: inline-block;
+font-size:  1.3rem;
+text-transform: uppercase;
+letter-spacing: 0.1rem;
+}
+
+.nav-menu-link {
+padding: 3rem 2rem;
+
+}
+
+.nav-submenu-link {
+padding: 1.6rem 1.2rem;
+}
+
+.nav-menu-text {
+margin-left: 1.1rem;
+position: relative;
+}
+
+.nav-submenu-text::before,
+.nav-menu-text::before {
+background-color: white;
+content: '';
+height: .2rem;
+bottom: -.8rem;
+position: absolute;
+transition: width .2s;
+width: 0;    
+}
+
+.nav-submenu-link:hover .nav-submenu-text::before,
+.nav-menu-link:hover .nav-menu-text::before {
+width: 100%;
+}
+
+.nav-menu-item.dropdown {
+display: none;
+}
+
+.nav-menu-item.dropdown:hover .nav-submenu {
+display: block;
+}
+.nav-submenu{
+animation: showFade .5s;
+background:  #141414;
+border: solid .1rem #393939;
+border-radius: .5rem;
+margin: -2rem;
+padding: 0.4rem 0;
+display: none;
+position: absolute;
+}
+
+.nav-submenu.active{
+    display: block;
+}
+
+.nav-submenu-text {
+position: relative;
+margin-left: 1.2rem;
+}
+
+@media screen and (max-width: 1024px){
+.nav-menu {
+    padding-bottom: 1rem;
+}
+.nav-menu-item.mobile-hidden,  
+.nav-menu-text{
+    display: none;
+}
+.nav-menu .dropdown {
+    display: inline-block;
+}
+
+.nav-menu-link {
+    font-size:  1.4rem;
+    padding: 2.8rem 1.6rem;
+}
+}
+

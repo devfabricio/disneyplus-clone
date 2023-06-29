@@ -1,0 +1,41 @@
+
+.user-profile{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    
+}
+
+.user-profile-reverse{
+    flex-direction: row-reverse;
+}
+
+.user-profile-avatar{
+    height: 4.8rem;
+    width: 4.8rem;
+}
+
+.user-profile-reverse .user-profile-title {
+    margin-left: 0;
+    margin-right: 1.6rem;
+}
+
+.user-profile-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-left:  1.6rem;
+}
+
+@media screen and (max-width: 1024px){
+    .user-menu-current-profile {
+        padding-top: 1.9rem;
+    }
+    
+    .user-menu .user-profile-title {
+        display: none;
+    }
+    .user-menu .user-profile-avatar{
+        height: 3.6rem;
+        width:  3.6rem;
+    }
+}
